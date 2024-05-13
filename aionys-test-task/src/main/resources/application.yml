@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: aionys-test-task-api
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    generate-unique-name: false
+    name: TestTask
