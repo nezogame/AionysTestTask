@@ -11,6 +11,7 @@
 	<groupId>org.denys.hudymov</groupId>
 	<artifactId>aionys-test-task</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>aionys-test-task-api</name>
 	<description>application for management(creating, editing, deleting) notes</description>
 	<properties>
@@ -18,6 +19,7 @@
 		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
 		<version.mapstruct-lombok>0.2.0</version.mapstruct-lombok>
 		<org.projectlombok.version>1.18.30</org.projectlombok.version>
+		<start-class>org.denys.hudymov.aionystesttask.AionysTestTaskApiApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -98,7 +100,6 @@
 							<artifactId>lombok-mapstruct-binding</artifactId>
 							<version>${version.mapstruct-lombok}</version>
 						</path>
-
 					</annotationProcessorPaths>
 				</configuration>
 			</plugin>

@@ -1,0 +1,1 @@
+java -jar aionys-test-task\aionys-test-task-0.0.1-SNAPSHOT.jar
