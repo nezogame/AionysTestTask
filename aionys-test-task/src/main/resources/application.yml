@@ -9,3 +9,9 @@ spring:
   datasource:
     generate-unique-name: false
     name: TestTask
+
+allowed:
+  origin: http://localhost:4200
+
+springdoc:
+  default-produces-media-type: application/json
