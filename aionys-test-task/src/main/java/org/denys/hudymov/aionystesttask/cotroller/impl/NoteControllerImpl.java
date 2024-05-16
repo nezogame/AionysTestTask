@@ -31,20 +31,20 @@ public class NoteControllerImpl implements NoteController {
 
     @Override
     public ResponseEntity<NoteDto> getById(Integer id) {
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
                 .body(noteService.findById(id));
     }
 
     @Override
     public ResponseEntity<NoteDto> update(NoteDtoRequest noteDtoRequest, Integer id) {
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
                 .body(noteService.update(noteDtoRequest, id));
     }
 
     @Override
     public ResponseEntity<Void> deleteById(Integer id) {
         noteService.deleteById(id);
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
                 .build();
     }
 }
