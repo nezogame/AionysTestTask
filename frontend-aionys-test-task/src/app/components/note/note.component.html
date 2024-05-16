@@ -1,0 +1,94 @@
+<div class="container mt-2 ">
+
+    <div class="col d-flex flex-wrap flex-column align-content-center">
+        @if (errorMsg.length>0) {
+        <div class="row alert alert-danger" role="alert">
+            <div class="col-md-11">
+                @for (msg of errorMsg; track msg) {
+                <p>{{msg}}</p>
+                }
+            </div>
+            <div class="col-md-1">
+                <button type="button" class="btn-close" aria-label="Close" (click)="clearErrorMessages()"></button>
+            </div>
+        </div>
+        }
+        <div class="row">
+            <div class="col-md-8">
+                <div class="mb-3">
+                    <label for="noteTitle" class="form-label">Note Title:</label>
+                    <input type="text" class="form-control" id="noteTitle" [(ngModel)]="noteDtoRequest.title"
+                        placeholder="Enter your note title">
+                </div>
+                <div class="mb-3">
+                    <label for="noteText" class="form-label">Note Text:</label>
+                    <textarea class="form-control" id="noteText" rows="3" [(ngModel)]="noteDtoRequest.text  "
+                        placeholder="Write your note here"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" (click)="saveNote()">Save Note</button>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="noteId" class="form-label">Note ID:</label>
+                    <input #id type="text" class="form-control" id="noteId" placeholder="Enter searched note id">
+                </div>
+                <div class="row">
+                    <button type="submit" class="col btn btn-primary me-2" (click)="findNoteById(id.value)">Find
+                        Note</button>
+                    <button type="submit" class="col btn btn-primary" (click)="fetchNotes()">Reset table</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 mt-2">
+            <div class="card note-card">
+                <div class="card-header">
+                    <h2 class="card-title text-center">Note </h2>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            @for (column of displayedColumn; track column){
+                            <th class="col">{{column}}</th>
+                            }
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        @for (note of notes; track note) {
+                        <tr class="card-body ">
+                            @if(note.isEdit){
+                            <td class="card-text">
+                                <input class="form-control" type="text" [(ngModel)]="note.title">
+                            </td>
+                            <td class="card-text">
+                                <input class="form-control" type="text" [(ngModel)]="note.text">
+                            </td>
+                            }@else {
+                            <td class="card-text">{{ note.title }}</td>
+                            <td class="card-text">{{ note.text }}</td>
+                            }
+                            <td class="card-text d-flex justify-content-evenly">
+                                @if (note.isEdit) {
+                                <button class="btn btn-sm btn-success" (click)="updateNote(note)">
+                                    Submit
+                                </button>
+                                <button class="btn btn-sm btn-danger" (click)="note.isEdit = !note.isEdit">
+                                    Cancel
+                                </button>
+                                }@else{
+                                <button class="btn btn-sm btn-warning" (click)="note.isEdit = !note.isEdit">
+                                    Edit
+                                </button>
+                                <button class="btn btn-sm btn-danger" (click)="deleteRow(note.id)">
+                                    Delete
+                                </button>
+                                }
+                            </td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

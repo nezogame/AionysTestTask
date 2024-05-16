@@ -1,0 +1,24 @@
+$primary: #007bff;
+
+.note-card {
+    border-color: $primary;
+}
+
+.card-header {
+    background-color: rgba($primary, 0.1);
+}
+
+.card-text {
+    border-bottom-width: 0;
+    background-color: transparent;
+}
+
+.table-body {
+    tr:nth-child(even) {
+        background-color: rgba($primary, 0.2);
+    }
+
+    .card-body:nth-child(odd) {
+        background-color: rgba($primary, 0.4);
+    }
+}
