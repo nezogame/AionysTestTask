@@ -30,6 +30,7 @@ public class NoteServiceImpl implements NoteService {
     public NoteDto save(NoteDtoRequest noteDto) {
         var note = NoteMapper.INSTANCE.noteDtoRequestToNote(noteDto);
         note = noteRepository.save(note);
+
         return NoteMapper.INSTANCE.noteToNoteDto(note);
     }
 
@@ -39,6 +40,7 @@ public class NoteServiceImpl implements NoteService {
         var note = optionalNote.orElseThrow(
                 () -> new EntityNotFoundException("Note with id: " + id + " doesn't exist")
         );
+
         return NoteMapper.INSTANCE.noteToNoteDto(note);
     }
 

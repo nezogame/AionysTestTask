@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import org.denys.hudymov.aionystesttask.exceptions.ApiRequestException;
 import org.denys.hudymov.aionystesttask.exceptions.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,17 +14,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class ApiExceptionHandler {
-    @ExceptionHandler(ApiRequestException.class)
-    public ResponseEntity<Object> handleApiRequestException(ApiRequestException ex) {
-        ErrorResponse apiException = ErrorResponse.builder()
-                .errors(Collections.singletonList(ex.getMessage()))
-                .statusCode(HttpStatus.BAD_REQUEST)
-                .timestamp(LocalDateTime.now())
-                .build();
-        return ResponseEntity
-                .badRequest()
-                .body(apiException);
-    }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Object> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
