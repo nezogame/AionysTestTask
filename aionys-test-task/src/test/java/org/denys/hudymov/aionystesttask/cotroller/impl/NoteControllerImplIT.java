@@ -2,8 +2,6 @@ package org.denys.hudymov.aionystesttask.cotroller.impl;
 
 import java.io.File;
 import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.List;
 import org.denys.hudymov.aionystesttask.repository.NoteRepository;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +12,7 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
@@ -32,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
+@ActiveProfiles("test")
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ExtendWith(SpringExtension.class)
 @AutoConfigureWebTestClient
@@ -47,7 +46,7 @@ class NoteControllerImplIT {
     private MockMvc mockMvc;
 
     @BeforeEach
-    public void setup() throws Exception {
+    public void setup() {
         this.mockMvc = MockMvcBuilders.webAppContextSetup(this.webApplicationContext).build();
     }
 
@@ -162,10 +161,6 @@ class NoteControllerImplIT {
             @Sql(value = "classpath:data.sql")
     })
     void givenNoteURIWithPost_whenMockMVC_thenResponseBadRequest() throws Exception {
-        List<String> errors = new ArrayList<>();
-        errors.add("Note must have a title");
-        errors.add("Note must have a text");
-
         mockMvc.perform(post("/notes")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{}"))
