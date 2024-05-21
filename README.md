@@ -23,13 +23,14 @@ of endpoints you can navigate to http://localhost:8080/swagger-ui/index.html
 
 First option is to run it via a bat file.
 1) after cloning project just double click "Run Backend" file
-2) if terminal will not maybe you should update or install java jdk
+2) if the terminal will not appear maybe you should update or install Java jdk
 
 Second option is to run it through IntelliJ IDEA
 1) open folder that cloned from the GitHub(folder name AionysTestTask)
 2) then press load button on pop up notification
 
 ![img_1.png](img_1.png)
+
 3) then navigate to file AionysTestTaskApiApplication that located in AionysTestTask\aionys-test-task\src\main\java\org\denys\hudymov\aionystesttask\AionysTestTaskApiApplication.java
 4) and press one of the start arrows and select 1 option ![img_3.png](img_3.png)
 
