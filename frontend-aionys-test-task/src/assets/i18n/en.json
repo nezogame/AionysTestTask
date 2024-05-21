@@ -1,0 +1,23 @@
+{
+    "note": {
+        "name": "Notes",
+        "title": "Note Title",
+        "text": "Note Text",
+        "id": "Note ID",
+        "btn": {
+            "save": "Save Note",
+            "find": "Find Note",
+            "reset": "Reset table",
+            "edit": "Edit",
+            "delete": "Delete",
+            "submit": "Submit",
+            "cancel": "Cancel"
+        },
+        "placeholder": {
+            "title": "Enter your note title",
+            "text": "Write your note here",
+            "id": "Enter searched note id"
+        }
+    },
+    "language": "EN"
+}

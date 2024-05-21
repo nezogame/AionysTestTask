@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { NoteService } from '../../services/services';
 import { NoteDto, NoteDtoRequest } from '../../services/models';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-note',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, TranslateModule],
   templateUrl: './note.component.html',
   styleUrl: './note.component.scss'
 })
