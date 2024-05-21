@@ -1,0 +1,23 @@
+{
+    "note": {
+        "name": "Note",
+        "title": "Titre de la note",
+        "text": "Texte de la note",
+        "id": "ID de la note",
+        "btn": {
+            "save": "Enregistrer la note",
+            "find": "Rechercher une note",
+            "reset": "Réinitialiser le tableau",
+            "edit": "Modifier",
+            "delete": "Supprimer",
+            "submit": "Soumettre",
+            "cancel": "Annuler"
+        },
+        "placeholder": {
+            "title": "Saisissez le titre de votre note",
+            "text": "Rédigez votre note ici",
+            "id": "Saisissez l'identifiant de la note recherchée"
+        }
+    },
+    "language": "FR"
+}
