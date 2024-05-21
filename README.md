@@ -1,12 +1,23 @@
 # AionysTestTask
-Instructions how to run API service
-
-URL if needed to install java or maven:
+### URL if needed to install java, maven or node with npm:
+Install Node.js and NPM: https://phoenixnap.com/kb/install-node-js-npm-on-windows
 
 how install java 21: https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-install-Java-21
 
 How to Install Maven: https://phoenixnap.com/kb/install-maven-windows
 
+## Instructions how to run fronted
+In the cloned directory write:
+1) cd frontend-aionys-test-task
+2) npm install 
+3) ng serve
+
+### if you want to run e2e test 
+First, run the backend and then write in the terminal(also in the frontend-aionys-test-task directory):
+
+npm run cypress:run
+
+## Instructions how to run API service
 After doing one of the options back-end will be started and if you want to check work
 of endpoints you can navigate to http://localhost:8080/swagger-ui/index.html
 
