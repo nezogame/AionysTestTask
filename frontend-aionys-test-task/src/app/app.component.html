@@ -1,3 +1,13 @@
 <main>
+  <div class="language-switcher d-flex flex-row-reverse">
+    <mat-form-field>
+      <mat-label>{{'language'| translate}}</mat-label>
+      <mat-select #language (selectionChange)="changeLanguage(language.value)">
+        <mat-option value="en">English</mat-option>
+        <mat-option value="fr">Français</mat-option>
+        <mat-option value="uk">Український</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
   <app-note></app-note>
 </main>
